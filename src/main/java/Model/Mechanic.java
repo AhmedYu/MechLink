@@ -1,4 +1,4 @@
-package org.example;
+package Model;
 
 public class Mechanic extends User{
     public void cancelWork(int jobID){

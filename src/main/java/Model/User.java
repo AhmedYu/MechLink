@@ -1,4 +1,4 @@
-package org.example;
+package Model;
 
 abstract public class User {
     private String fName;

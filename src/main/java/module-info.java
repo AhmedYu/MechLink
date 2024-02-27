@@ -3,6 +3,6 @@ module com.ahmed.mechlink {
     requires javafx.fxml;
 
 
-    opens com.ahmed.mechlink to javafx.fxml;
-    exports com.ahmed.mechlink;
+    opens Main to javafx.fxml;
+    exports Main;
 }

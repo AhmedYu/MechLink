@@ -25,9 +25,10 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-  mainModule = 'com.ahmed.mechlink'
-  mainClass = 'com.ahmed.mechlink.HelloApplication'
+  mainModule = 'Main'
+  mainClass = 'Main.HelloApplication'
 }
+
 
 javafx {
   version = '17.0.6'
