@@ -9,6 +9,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.net.URL;
+
 public class MainScreen extends Application {
 
     @Override
@@ -30,7 +32,7 @@ grid.add(loginInBtn, 0,1);
         vb.getChildren().add(grid);
         Scene sn = new Scene(vb,500, 700);
 
-
+loadStylesheetIntoScene(sn);
         primaryStage.setScene(sn);
         primaryStage.setTitle("Welcome page");
         primaryStage.show();
@@ -38,5 +40,17 @@ grid.add(loginInBtn, 0,1);
     }
     public static void main(String[] args) {
         launch();
+    }
+    private void loadStylesheetIntoScene(Scene scene) {
+        URL stylesheetURL = getClass().getResource("/mainStyle.css");
+        if (stylesheetURL == null) {
+            System.out.println("the style sheet was null!!!!");
+            return;
+        }
+        String urlString = stylesheetURL.toExternalForm();
+        if (urlString == null) {
+            return;
+        }
+        scene.getStylesheets().add(urlString);
     }
 }

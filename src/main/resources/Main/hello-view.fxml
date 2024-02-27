@@ -6,6 +6,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import java.lang.String?>
+<?import java.net.URL?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="Main.HelloController">
   <padding>
