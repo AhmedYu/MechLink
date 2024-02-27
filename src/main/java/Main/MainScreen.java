@@ -22,14 +22,18 @@ public class MainScreen extends Application {
 
         Label title = new Label("MechLInk");
 title.getStyleClass().add("tittle");
-        vb.getChildren().add(title);
+
         Button loginInBtn = new Button("Login");
+        Button sigUpBtn = new Button("Sign up");
 
         grid.setPadding(new Insets(10.2));
-grid.add(loginInBtn, 0,1);
-
-
+grid.add(loginInBtn, 2,1);
+grid.add(title, 0,0)
+;grid.add(sigUpBtn, 2,2);
         vb.getChildren().add(grid);
+        grid.setVgap(20);
+        Insets inset = new Insets(23);
+        grid.setPadding(inset);
         Scene sn = new Scene(vb,500, 700);
 
 loadStylesheetIntoScene(sn);
@@ -53,4 +57,5 @@ loadStylesheetIntoScene(sn);
         }
         scene.getStylesheets().add(urlString);
     }
+
 }
