@@ -2,3 +2,48 @@
 -fx-background-color:#38ee00;
 -fx-font-size: 30px;
 }
+.root {
+-fx-background-color:#1E0561;
+
+}
+.buttonBox{
+
+ -fx-alignment:center ;
+ -fx-pref-height: 200px;
+
+}
+.slogan {
+
+
+ -fx-text-fill:#449EEC;
+ -fx-font-size: 34px;}
+.brandName {
+
+  -fx-text-fill:#449EEC;
+-fx-font-size: 26px;
+-fx-text-alignment: center
+
+
+}
+
+.mainBtns{
+ -fx-background-color:#449EEC;
+ -fx-text-fill:#E5E5E5;
+ -fx-stroke-line-join:round;
+-fx-background-radius:5em;
+ -fx-text-alignment: center;
+ -fx-pref-height: 30px;
+-fx-width: 200px;
+  -fx-pref-width: 300px;
+  -fx-font-size: 1.4em;
+}
+
+/**
+
+Colors:
+#57ACF6
+#031E35
+#200765
+#6A69EA
+#E5E5E5
+**/

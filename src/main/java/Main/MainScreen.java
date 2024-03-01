@@ -1,14 +1,25 @@
 package Main;
 
 import javafx.application.Application;
+import javafx.css.converter.LadderConverter;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
+
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 
 public class MainScreen extends Application {
@@ -18,25 +29,11 @@ public class MainScreen extends Application {
         GridPane grid = new GridPane();
 
 
-        VBox vb = new VBox(10);
-
-        Label title = new Label("MechLInk");
-title.getStyleClass().add("tittle");
-
-        Button loginInBtn = new Button("Login");
-        Button sigUpBtn = new Button("Sign up");
-
-        grid.setPadding(new Insets(10.2));
-grid.add(loginInBtn, 2,1);
-grid.add(title, 0,0)
-;grid.add(sigUpBtn, 2,2);
-        vb.getChildren().add(grid);
-        grid.setVgap(20);
-        Insets inset = new Insets(23);
-        grid.setPadding(inset);
-        Scene sn = new Scene(vb,500, 700);
+        Scene sn = new Scene(createVB(),500, 700);
 
 loadStylesheetIntoScene(sn);
+
+        primaryStage.isResizable();
         primaryStage.setScene(sn);
         primaryStage.setTitle("Welcome page");
         primaryStage.show();
@@ -57,5 +54,75 @@ loadStylesheetIntoScene(sn);
         }
         scene.getStylesheets().add(urlString);
     }
+public static Parent createVB(){
+    Image  logo = new Image("images/icon.png");
 
+    ImageView imageView = new ImageView();
+    //Setting image to the image view
+    imageView.setImage(logo);
+
+imageView.setFitWidth(110);
+imageView.setPreserveRatio(true);
+    HBox hb = new HBox(0);
+    hb.getChildren().add(imageView);
+
+
+hb.setAlignment(Pos.CENTER);
+
+    VBox vb = new VBox(10);
+    vb.getStyleClass().add("root");
+vb.setSpacing(30);
+
+
+
+
+    vb.getChildren().add(hb);
+
+
+vb.getChildren().add(createLablesForTheLogo());
+
+vb.getChildren().add(createButtons());
+    Insets inset = new Insets(10);
+   return  vb;
+}
+static  VBox createLablesForTheLogo(){
+    VBox logoBox = new VBox(4);
+    Label brandLogo = new Label("MechLink");
+
+
+    brandLogo.getStyleClass().add("brandName");
+    Label slogan = new Label("MechLink: Drive. Connect.Thrive");
+logoBox.setAlignment(Pos.CENTER);
+
+
+    brandLogo.getStyleClass().add("brandName");
+
+  logoBox.getChildren().add(brandLogo);
+    slogan.getStyleClass().add("slogan");
+ logoBox.getChildren().add(slogan);
+slogan.getStyleClass().add("slogan");
+
+return  logoBox;
+}
+
+    /**
+     * This method will serve as button constructor
+     * or creator. Sometime in the future we may
+     * add event handlers to the
+     * buttons.
+     * @return vbox that holds two buttons.
+     */
+    public static VBox createButtons(  ){
+        Button signUpBtn = new Button("Sign up");
+        Button loginBtn = new Button("Log in");
+
+        VBox box = new VBox(30, signUpBtn, loginBtn);
+     signUpBtn.getStyleClass().add("mainBtns");
+  loginBtn.getStyleClass().add("mainBtns");
+  box.getStyleClass().add("buttonBox");
+
+
+    return box;
+
+}
 }
