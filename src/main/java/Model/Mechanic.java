@@ -1,6 +1,14 @@
 package Model;
 
 public class Mechanic extends User{
+    //Mechanic Default Constructor
+    public Mechanic(){
+
+    }
+    // Mechanic Constructor with parameters
+    public Mechanic(String fName, String lName, int zipCode, int idNum, String emailAddress, String username, String password){
+        super(fName, lName, zipCode, idNum, emailAddress, username, password);
+    }
     public void cancelWork(int jobID){
         System.out.println("Cancel job.");
 

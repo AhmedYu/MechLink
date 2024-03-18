@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.Authenticator;
+import Model.Controller.Authenticator;
 
 import java.util.Map;
 import java.util.Scanner;
