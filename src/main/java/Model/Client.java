@@ -1,9 +1,11 @@
 package Model;
 
+import Controller.Authenticator;
+
 import java.util.Map;
 import java.util.Scanner;
 
-public class Client extends User implements Authenticator{
+public class Client extends User implements Authenticator {
     private Car[] cars;
     private String address;
     private Map servicesNeeded;
@@ -37,12 +39,15 @@ public class Client extends User implements Authenticator{
 
     }
     public void removeWork(){
+        System.out.println("Remove any work off your list.");
 
     }
     public void modifyWork(){
+        System.out.println("Modify your list.");
 
     }
     public void confirmWork(){
+        System.out.println("Confirm if work has been completed.");
 
     }
 
