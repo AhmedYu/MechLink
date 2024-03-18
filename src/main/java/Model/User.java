@@ -11,19 +11,39 @@ abstract public class User {
     private String password;
     private Job[] jobs;
 
-    public String getfName() {
+    public User(){
+
+    }
+
+    public User(String fName, String lName, int zipcode, int idNum, String emailAddress, String username, String password) {
+
+    }
+
+    public User(String fName, String lName, int zipcode, int idNum, boolean isMechanic, String emailAddress, String userName, String password, Job[] jobs) {
+        this.fName = fName;
+        this.lName = lName;
+        this.zipcode = zipcode;
+        this.idNum = idNum;
+        this.isMechanic = isMechanic;
+        this.emailAddress = emailAddress;
+        this.userName = userName;
+        this.password = password;
+        this.jobs = jobs;
+    }
+
+    public String getFName() {
         return fName;
     }
 
-    public void setfName(String fName) {
+    public void setFName(String fName) {
         this.fName = fName;
     }
 
-    public String getlName() {
+    public String getLName() {
         return lName;
     }
 
-    public void setlName(String lName) {
+    public void setLName(String lName) {
         this.lName = lName;
     }
 

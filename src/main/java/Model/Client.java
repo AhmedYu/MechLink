@@ -1,22 +1,58 @@
 package Model;
 
 import java.util.Map;
+import java.util.Scanner;
 
-public class Client extends User {
-private Car[] cars;
-private String address;
-private Map servicesNeeded;
+public class Client extends User implements Authenticator{
+    private Car[] cars;
+    private String address;
+    private Map servicesNeeded;
 
-public void postWork(){
+    //Default Constructor
+    public Client(){
 
-}
-public void removeWork(){
+    }
+    //Constructor with parameters
+    public Client(String address, String fName, String lName, int zipcode, int idNum, String emailAddress, String username, String password){
+        super(fName, lName, zipcode, idNum, emailAddress, username, password);
+        this.address = address;
+    }
 
-}
-public void modifyWork(){
+    public String getAddress(){
+        return address;
+    }
 
-}
-public void confirmWork(){
+    public Car[] getCars() {
+        return cars;
+    }
 
-}
+    public void setCars(Car[] cars) {
+        this.cars = cars;
+    }
+    public void postWork(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Post any work you need help with your car.");
+
+        String postWork = input.nextLine();
+
+    }
+    public void removeWork(){
+
+    }
+    public void modifyWork(){
+
+    }
+    public void confirmWork(){
+
+    }
+
+    @Override
+    public void updateInformation(String updateInformation) {
+        this.address = address;
+    }
+
+    @Override
+    public void login() {
+
+    }
 }
