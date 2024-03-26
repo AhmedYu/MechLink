@@ -1,4 +1,4 @@
-package Model;
+package edu.metrostate.Model;
 
 public class Car {
     private String make;

@@ -1,4 +1,4 @@
-package Model;
+package edu.metrostate.Model;
 
 public abstract class User {
     private String fName;

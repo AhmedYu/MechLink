@@ -1,25 +1,20 @@
-package Main;
+package edu.metrostate;
 
 import javafx.application.Application;
-import javafx.css.converter.LadderConverter;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 
 public class MainScreen extends Application {
@@ -54,8 +49,8 @@ loadStylesheetIntoScene(sn);
         }
         scene.getStylesheets().add(urlString);
     }
-public static Parent createVB(){
-    Image  logo = new Image("images/icon.png");
+public  Parent createVB(){
+    Image  logo = new Image(getClass().getResource("images/icon.png").toString());
 
     ImageView imageView = new ImageView();
     //Setting image to the image view

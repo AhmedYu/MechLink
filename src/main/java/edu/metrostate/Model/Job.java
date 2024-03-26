@@ -1,4 +1,4 @@
-package Model;
+package edu.metrostate.Model;
 
 import java.util.Date;
 
