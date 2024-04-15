@@ -6,6 +6,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,6 +17,9 @@ public class ClientDashboardController implements Initializable {
 
     @FXML
     private Button postJobBtn;
+
+    @FXML
+    private VBox jobPostedVBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
