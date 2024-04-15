@@ -12,8 +12,5 @@ public class HelloController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    @FXML
-    protected void onLogoutButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+
 }

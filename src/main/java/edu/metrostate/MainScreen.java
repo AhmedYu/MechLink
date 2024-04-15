@@ -30,6 +30,12 @@ public class MainScreen extends Application {
 
 loadStylesheetIntoScene(sn);
 
+// This is used to test and run the Mechanic Page
+//        Parent root = FXMLLoader.load(getClass().getResource("mechanic.fxml"));
+//        primaryStage.setTitle("Mechanic Page");
+//        primaryStage.setScene(new Scene(root, 600, 600));
+//        primaryStage.show();
+
         primaryStage.isResizable();
         primaryStage.setScene(sn);
         primaryStage.setTitle("Welcome page");
