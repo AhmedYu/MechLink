@@ -1,4 +1,4 @@
-package Model.Controller;
+package edu.metrostate.Model.Controller;
 
 public interface Authenticator {
     public void updateInformation(String updateInformation);
