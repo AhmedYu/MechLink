@@ -1,6 +1,6 @@
-package Model;
+package edu.metrostate.Model;
 
-import Model.Controller.Authenticator;
+import edu.metrostate.Model.Controller.Authenticator;
 
 import java.util.Map;
 import java.util.Scanner;
