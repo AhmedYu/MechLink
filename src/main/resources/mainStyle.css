@@ -37,7 +37,21 @@
   -fx-pref-width: 300px;
   -fx-font-size: 1.4em;
 }
+.login {
+-fx-background-color:#449EEC;
+-fx-alignment: center;
 
+
+}
+.loginBtn {
+ -fx-stroke-line-join:round;
+ -fx-background-radius:5em;
+  -fx-text-alignment: center;
+   -fx-pref-height: 30px;
+ -fx-font-size: 1.4em;
+   -fx-pref-width: 200px;
+   -fx-width: 200px;
+}
 /**
 
 Colors:

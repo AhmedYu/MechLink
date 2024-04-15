@@ -6,7 +6,7 @@ plugins {
   id 'org.beryx.jlink' version '2.25.0'
 }
 
-group 'com.ahmed'
+group 'edu.metrostate'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -25,8 +25,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-  mainModule = 'Main'
-  mainClass = 'Main.HelloApplication'
+  mainModule = 'edu.metrostate'
+  mainClass = 'edu.metrostate.MainScreen'
 }
 
 

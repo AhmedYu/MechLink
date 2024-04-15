@@ -1,8 +1,10 @@
-module com.ahmed.mechlink {
+module edu.metrostate {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens Main to javafx.fxml;
-    exports Main;
+    opens edu.metrostate to javafx.fxml;
+    exports edu.metrostate;
+    exports Controlls;
+    opens Controlls to javafx.fxml;
 }
