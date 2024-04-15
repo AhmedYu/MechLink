@@ -1,5 +1,6 @@
 package edu.metrostate.Model;
 
+
 public class Mechanic extends User{
     //Mechanic Default Constructor
     public Mechanic(){
@@ -14,6 +15,8 @@ public class Mechanic extends User{
 
     }
     public boolean acceptWork(int jobID){
+        Job job = new Job();
+        //job = setJobs(job[] jobID);
         return true;
     }
     public void browseJobs(){

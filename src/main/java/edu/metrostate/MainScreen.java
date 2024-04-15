@@ -1,6 +1,7 @@
 package edu.metrostate;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -15,12 +16,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 
 public class MainScreen extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
         GridPane grid = new GridPane();
 
 
@@ -35,7 +37,7 @@ loadStylesheetIntoScene(sn);
 
     }
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
     private void loadStylesheetIntoScene(Scene scene) {
         URL stylesheetURL = getClass().getResource("/mainStyle.css");
