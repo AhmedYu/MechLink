@@ -1,6 +1,6 @@
-package edu.metrostate.Model;
+package Model;
 
-public abstract class User {
+abstract public class User {
     private String fName;
     private String lName;
     private int zipcode;
@@ -11,39 +11,19 @@ public abstract class User {
     private String password;
     private Job[] jobs;
 
-    public User(){
-
-    }
-
-    public User(String fName, String lName, int zipcode, int idNum, String emailAddress, String username, String password) {
-
-    }
-
-    public User(String fName, String lName, int zipcode, int idNum, boolean isMechanic, String emailAddress, String userName, String password, Job[] jobs) {
-        this.fName = fName;
-        this.lName = lName;
-        this.zipcode = zipcode;
-        this.idNum = idNum;
-        this.isMechanic = isMechanic;
-        this.emailAddress = emailAddress;
-        this.userName = userName;
-        this.password = password;
-        this.jobs = jobs;
-    }
-
-    public String getFName() {
+    public String getfName() {
         return fName;
     }
 
-    public void setFName(String fName) {
+    public void setfName(String fName) {
         this.fName = fName;
     }
 
-    public String getLName() {
+    public String getlName() {
         return lName;
     }
 
-    public void setLName(String lName) {
+    public void setlName(String lName) {
         this.lName = lName;
     }
 

@@ -1,36 +1,17 @@
-package edu.metrostate;
+package View;
 
 import Controlls.MainScrenController;
 import javafx.application.Application;
-<<<<<<< HEAD:src/main/java/edu/metrostate/MainScreen.java
-import javafx.geometry.Insets;
-=======
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
->>>>>>> Login:src/main/java/Main/MainScreen.java
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-<<<<<<< HEAD:src/main/java/edu/metrostate/MainScreen.java
-=======
-import javafx.scene.control.Control;
->>>>>>> Login:src/main/java/Main/MainScreen.java
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-<<<<<<< HEAD:src/main/java/edu/metrostate/MainScreen.java
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-=======
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
->>>>>>> Login:src/main/java/Main/MainScreen.java
 import java.net.URL;
 
 public class MainScreen extends Application {
@@ -60,11 +41,6 @@ public class MainScreen extends Application {
         }
         scene.getStylesheets().add(stylesheetURL.toExternalForm());
     }
-<<<<<<< HEAD:src/main/java/edu/metrostate/MainScreen.java
-public  Parent createVB(){
-    Image  logo = new Image(getClass().getResource("images/icon.png").toString());
-=======
->>>>>>> Login:src/main/java/Main/MainScreen.java
 
     public Parent createRootNode() {
         Image logo = new Image("images/icon.png");
@@ -110,6 +86,7 @@ public  Parent createVB(){
         });
 
         loginBtn.setOnAction(event -> {
+
          controller.loginHandler();
         });
 

@@ -1,9 +1,6 @@
 package Controlls;
 
-import Main.LoginView;
-import Main.SignUpView;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
 public class MainScrenController {
@@ -25,11 +22,12 @@ public class MainScrenController {
 //       signUpView.
     }
  public void signUpBtnHandler(){
+     SingUpController singViewUpController = new SingUpController();
+     singViewUpController.showLoginView();
 
-     System.out.println(" Message Fromm the Controller : sign up button clicked!");
  }
 public  void loginHandler(){
-    System.out.println("login clicked");
+
     LoginViewController controller =  new  LoginViewController();
     controller.showLoginView();
 
