@@ -1,128 +1,115 @@
 package Main;
 
+import Controlls.MainScrenController;
 import javafx.application.Application;
-import javafx.css.converter.LadderConverter;
-import javafx.geometry.Insets;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Control;
 import javafx.scene.control.Label;
-
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.net.URL;
 
 public class MainScreen extends Application {
+    private MainScrenController controller ;
 
     @Override
     public void start(Stage primaryStage) {
-        GridPane grid = new GridPane();
-
-
-        Scene sn = new Scene(createVB(),500, 700);
-
-loadStylesheetIntoScene(sn);
-
-        primaryStage.isResizable();
+        primaryStage.setMaximized(true);
+        Scene sn = new Scene(createRootNode(), 500, 700);
+        loadStylesheetIntoScene(sn);
         primaryStage.setScene(sn);
         primaryStage.setTitle("Welcome page");
         primaryStage.show();
+    }
 
-    }
     public static void main(String[] args) {
-        launch();
+        // Set the controller instance
+
+        launch(args);
     }
+
     private void loadStylesheetIntoScene(Scene scene) {
         URL stylesheetURL = getClass().getResource("/mainStyle.css");
         if (stylesheetURL == null) {
             System.out.println("the style sheet was null!!!!");
             return;
         }
-        String urlString = stylesheetURL.toExternalForm();
-        if (urlString == null) {
-            return;
-        }
-        scene.getStylesheets().add(urlString);
+        scene.getStylesheets().add(stylesheetURL.toExternalForm());
     }
-public static Parent createVB(){
-    Image  logo = new Image("images/icon.png");
 
-    ImageView imageView = new ImageView();
-    //Setting image to the image view
-    imageView.setImage(logo);
+    public Parent createRootNode() {
+        Image logo = new Image("images/icon.png");
+        ImageView imageView = new ImageView(logo);
+        imageView.setFitWidth(110);
+        imageView.setPreserveRatio(true);
+        HBox hb = new HBox(imageView);
+        hb.setAlignment(Pos.CENTER);
 
-imageView.setFitWidth(110);
-imageView.setPreserveRatio(true);
-    HBox hb = new HBox(0);
-    hb.getChildren().add(imageView);
+        VBox vb = new VBox(10);
+        vb.getStyleClass().add("root");
+        vb.setSpacing(30);
+        vb.getChildren().addAll(hb, createLabelsForTheLogo(), createButtons());
+        return vb;
+    }
 
-
-hb.setAlignment(Pos.CENTER);
-
-    VBox vb = new VBox(10);
-    vb.getStyleClass().add("root");
-vb.setSpacing(30);
-
-
-
-
-    vb.getChildren().add(hb);
-
-
-vb.getChildren().add(createLablesForTheLogo());
-
-vb.getChildren().add(createButtons());
-    Insets inset = new Insets(10);
-   return  vb;
-}
-static  VBox createLablesForTheLogo(){
-    VBox logoBox = new VBox(4);
-    Label brandLogo = new Label("MechLink");
-
-
-    brandLogo.getStyleClass().add("brandName");
-    Label slogan = new Label("MechLink: Drive. Connect.Thrive");
-logoBox.setAlignment(Pos.CENTER);
-
-
-    brandLogo.getStyleClass().add("brandName");
-
-  logoBox.getChildren().add(brandLogo);
-    slogan.getStyleClass().add("slogan");
- logoBox.getChildren().add(slogan);
-slogan.getStyleClass().add("slogan");
-
-return  logoBox;
-}
+    static VBox createLabelsForTheLogo() {
+        Label brandLogo = new Label("MechLink");
+        brandLogo.getStyleClass().add("brandName");
+        Label slogan = new Label("MechLink: Drive. Connect. Thrive");
+        slogan.getStyleClass().add("slogan");
+        VBox logoBox = new VBox(4, brandLogo, slogan);
+        logoBox.setAlignment(Pos.CENTER);
+        return logoBox;
+    }
 
     /**
-     * This method will serve as button constructor
-     * or creator. Sometime in the future we may
-     * add event handlers to the
-     * buttons.
-     * @return vbox that holds two buttons.
+     * This method will serve as button constructor or creator. Sometime in the future we may add event handlers to the buttons.
+     *
+     * @return VBox that holds two buttons.
      */
-    public static VBox createButtons(  ){
+    public VBox createButtons() {
+
         Button signUpBtn = new Button("Sign up");
         Button loginBtn = new Button("Log in");
+        controller = new MainScrenController(signUpBtn, loginBtn);
+        signUpBtn.setOnAction(event -> {
+            if (controller != null) {
+                controller.signUpBtnHandler();
+            } else {
+                System.out.println("Controller is null!");
+            }
+        });
+
+        loginBtn.setOnAction(event -> {
+         controller.loginHandler();
+        });
+
+
 
         VBox box = new VBox(30, signUpBtn, loginBtn);
-     signUpBtn.getStyleClass().add("mainBtns");
-  loginBtn.getStyleClass().add("mainBtns");
-  box.getStyleClass().add("buttonBox");
+        signUpBtn.getStyleClass().add("mainBtns");
+        loginBtn.getStyleClass().addAll("mainBtns");
+        box.getStyleClass().add("buttonBox");
+        return box;
+    }
 
+//
+//    @Override
+//    public void start(Stage stage) throws Exception {
+//        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+//    Scene sn = new Scene(root,700, 670);
+//stage.setScene(sn );
+//stage.setTitle("Welcome To MechLink!");
+//stage.show();
+//    }
 
-    return box;
-
-}
 }
